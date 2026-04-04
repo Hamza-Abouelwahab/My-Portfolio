@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+/* ── Fonts ── */
+* { font-family: 'Inter', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+
+/* ── Base ── */
+body {
+  background-color: #051305;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+@keyframes caret-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.animate-caret-blink { animation: caret-blink 1s step-end infinite; }
