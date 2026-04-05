@@ -12,3 +12,234 @@ body {
 }
 @keyframes caret-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 .animate-caret-blink { animation: caret-blink 1s step-end infinite; }
+
+/* ── Scrollbar ── */
+
+::-webkit-scrollbar { width: 5px; }
+
+::-webkit-scrollbar-track { background: #071E07; }
+
+::-webkit-scrollbar-thumb { background: #2D531A88; border-radius: 10px; }
+
+
+
+/* ── Typing cursor ── */
+
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+.cursor { display: inline-block; width: 2px; height: 1.1em; background: #477023; margin-left: 3px; vertical-align: middle; animation: blink 1s step-end infinite; }
+
+
+
+/* ── Pulse badge ── */
+
+@keyframes pulse-dot { 0%,100% { box-shadow: 0 0 0 0 #477023aa; } 70% { box-shadow: 0 0 0 8px #47702300; } }
+
+.pulse-dot { animation: pulse-dot 1.8s infinite; }
+
+
+
+/* ── Float ── */
+
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+
+
+/* ── Spin slow ── */
+
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+
+.animate-spin-slow { animation: spinSlow 8s linear infinite; }
+
+.animate-spin-reverse { animation: spinSlow 12s linear infinite reverse; }
+
+
+
+/* ── Rotating gradient border ── */
+
+@keyframes rotateBorder {
+
+  0%   { background-position: 0% 50%; }
+
+  50%  { background-position: 100% 50%; }
+
+  100% { background-position: 0% 50%; }
+
+}
+
+.rotating-border {
+
+  background: linear-gradient(270deg, #477023, #2D531A, #0D330E, #477023);
+
+  background-size: 400% 400%;
+
+  animation: rotateBorder 4s ease infinite;
+
+}
+
+
+
+/* ── Glow text ── */
+
+.glow-text { text-shadow: 0 0 30px #47702355; }
+
+
+
+/* ── Glassmorphism ── */
+
+.glass {
+
+  background: rgba(13, 51, 14, 0.35);
+
+  backdrop-filter: blur(16px);
+
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(71, 112, 35, 0.15);
+
+}
+
+
+
+/* ── Dot grid background ── */
+
+.dot-grid {
+
+  background-image: radial-gradient(circle, #47702318 1px, transparent 1px);
+
+  background-size: 28px 28px;
+
+}
+
+
+
+/* ── Cursor glow ── */
+
+.cursor-glow {
+
+  width: 300px; height: 300px;
+
+  background: radial-gradient(circle, #2D531A18 0%, transparent 70%);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  position: fixed;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 9999;
+
+  transition: left 0.08s, top 0.08s;
+
+}
+
+
+
+/* ── Skill pill hover ── */
+
+.skill-pill { transition: all 0.20s ease; }
+
+.skill-pill:hover { transform: scale(1.04); border: #47702366 solid; }
+
+
+
+/* ── Card hover ── */
+
+.skill-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+
+.skill-card:hover { transform: translateY(-6px); }
+
+
+
+/* ── Social icon hover ── */
+
+.social-icon { transition: transform 0.2s ease, color 0.2s ease; }
+
+.social-icon:hover { transform: translateY(-4px); }
+
+
+
+/* ── Navbar blur ── */
+
+.navbar-blur {
+
+  background: #071e07eb;
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid rgba(71, 112, 35, 0.15);
+
+}
+
+
+
+/* ── Section spacing ── */
+
+.section-pad { padding: 100px 0; }
+
+
+
+/* ── Gradient text ── */
+
+.gradient-text {
+
+  background: linear-gradient(135deg, #a8d878 0%, #477023 50%, #2D531A 100%);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+}
+
+
+
+/* ── Accent underline ── */
+
+.accent-line {
+
+  width: 60px; height: 3px;
+
+  background: linear-gradient(90deg, #477023, #2D531A);
+
+  border-radius: 99px;
+
+}
+
+
+
+/* ── Button glow border ── */
+
+.btn-outline-glow {
+
+  border: 1px solid #47702366;
+
+  box-shadow: 0 0 12px #47702322, inset 0 0 12px #47702308;
+
+  transition: all 0.3s ease;
+
+}
+
+.btn-outline-glow:hover {
+
+  border-color: #477023;
+
+  box-shadow: 0 0 24px #47702355, inset 0 0 20px #47702315;
+
+}
+
+
+
+/* ── Section alt bg ── */
+
+.section-alt { background-color: #071E07; }
+
+
+
