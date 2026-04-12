@@ -41,7 +41,7 @@ export default function Navbar() {
           href="#contact"
           className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-[#a8d878] btn-outline-glow"
         >
-          Hire Me
+          Contact Me
         </a>
 
         <button className="md:hidden text-gray-300 hover:text-[#a8d878]" onClick={() => setOpen(o => !o)}>

@@ -13,7 +13,7 @@ const Highlight = ({ children }) => (
 );
 
 const CodeMockup = () => (
-  <div className=" rounded-2xl overflow-hidden shadow-[0_0_40px_#47702315] bg-[#0b230b] w-full max-w-sm">
+  <div className="rounded-2xl overflow-hidden shadow-[0_0_40px_#47702315] bg-[#0b230b] w-full max-w-sm">
     <div className="flex items-center gap-2 px-4 py-3 bg-[#0D330E] border-b border-[#47702320]">
       <span className="w-3 h-3 rounded-full bg-red-500/70" />
       <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
@@ -72,23 +72,29 @@ export default function About() {
             </p>
 
             <div className="flex gap-4 mt-4 flex-wrap">
-              <div className="glass rounded-2xl px-6 py-5 flex items-center gap-4 flex-1 min-w-[160px] hover:border-[#47702340] transition-all duration-300 group">
-                <div className="p-3 rounded-xl bg-[#2D531A20] text-[#a8d878] group-hover:bg-[#2D531A40] transition">
-                  <FiCode size={22} />
+              <div className="relative group flex-1 min-w-[160px] rounded-2xl p-px overflow-hidden" style={{ background: 'linear-gradient(135deg, #47702240, #2D531A20)' }}>
+                <div className="rounded-2xl px-6 py-5 flex items-center gap-4 h-full transition-all duration-300" style={{ background: 'rgba(7,30,7,0.85)' }}>
+                  <div className="p-3 rounded-xl text-[#a8d878] transition-all duration-300 group-hover:scale-110" style={{ background: 'rgba(45,83,26,0.3)' }}>
+                    <FiCode size={22} />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-base">Front-End</p>
+                    <p className="text-gray-500 text-xs mt-0.5">React · JS · CSS</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-white font-bold text-lg">Front-End</p>
-                  <p className="text-gray-500 text-xs">React · JS · CSS</p>
-                </div>
+                <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full transition-all duration-500" style={{ background: 'linear-gradient(90deg, #477023, #a8d878)' }} />
               </div>
-              <div className="glass rounded-2xl px-6 py-5 flex items-center gap-4 flex-1 min-w-[160px] hover:border-[#47702340] transition-all duration-300 group">
-                <div className="p-3 rounded-xl bg-[#2D531A20] text-[#c8e8a0] group-hover:bg-[#2D531A40] transition">
-                  <FiServer size={22} />
+              <div className="relative group flex-1 min-w-[160px] rounded-2xl p-px overflow-hidden" style={{ background: 'linear-gradient(135deg, #47702240, #2D531A20)' }}>
+                <div className="rounded-2xl px-6 py-5 flex items-center gap-4 h-full transition-all duration-300" style={{ background: 'rgba(7,30,7,0.85)' }}>
+                  <div className="p-3 rounded-xl text-[#c8e8a0] transition-all duration-300 group-hover:scale-110" style={{ background: 'rgba(45,83,26,0.3)' }}>
+                    <FiServer size={22} />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-base">Back-End</p>
+                    <p className="text-gray-500 text-xs mt-0.5">Laravel · PHP · MySQL</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-white font-bold text-lg">Back-End</p>
-                  <p className="text-gray-500 text-xs">Laravel · PHP · MySQL</p>
-                </div>
+                <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full transition-all duration-500" style={{ background: 'linear-gradient(90deg, #477023, #a8d878)' }} />
               </div>
             </div>
           </motion.div>
