@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import QribLik from '../assets/QribLik.png';
-import { fashe } from '../constant/image';
+import { fashe, yummy } from '../constant/image';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
@@ -29,12 +29,12 @@ const PROJECTS = [
     live: 'https://hamza-abouelwahab-final-project-rea.vercel.app',
   },
   {
-    title: 'Comming Soon ...',
-    image: '',
-    description: 'Modern responsive fashion e-commerce with product categories, featured items, banners, and a smooth shopping experience.',
+    title: 'Yummy Food',
+    image: yummy,
+    description: 'Developed a responsive restaurant landing page website with menu filtering, carousels, reservation modal, testimonials, events, chefs, and contact sections using HTML, CSS, and JavaScript.',
     tags: ['HTML5', 'Bootstrap' ,'Sass'],
-    github: 'https://github.com/Hamza-Abouelwahab/HamzaAbouelwahab-Final-project-react.git',
-    live: 'https://hamza-abouelwahab-final-project-rea.vercel.app',
+    github: 'https://github.com/Hamza-Abouelwahab/ProjectFinal-dom-.git',
+    live: 'https://project-final-naljtel8p-hamzaabouelwahab04-7887s-projects.vercel.app/',
   },
 ];
 

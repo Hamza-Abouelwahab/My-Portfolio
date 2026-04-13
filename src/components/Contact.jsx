@@ -1,8 +1,15 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FiSend, FiArrowUpRight } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
+
+//  EmailJS config
+const EJS_SERVICE  = 'service_0ls7feq';   
+const EJS_TEMPLATE = 'template_zu0g7za';  
+const EJS_PUBLIC   = '1jijDXTcveGBivSZU';   
+
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
@@ -17,16 +24,16 @@ const SOCIALS = [
   { icon: <HiOutlineMail size={18} />, label: 'Email', href: 'mailto:hamzaabouelwahab04@email.com', value: 'hamzaabouelwahab04@email.com' },
 ];
 
-const FloatingInput = ({ label, type = 'text', value, onChange, required, textarea }) => {
+const FloatingInput = ({ label, type = 'text', name, value, onChange, required, textarea }) => {
   const base = "peer w-full bg-transparent border-b border-[#47702340] pt-5 pb-2 text-sm text-gray-200 placeholder-transparent focus:outline-none focus:border-[#a8d878] transition-colors duration-300";
   const labelClass = "absolute left-0 top-5 text-xs text-gray-500 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-[#a8d878] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs";
 
   return (
     <div className="relative w-full">
       {textarea ? (
-        <textarea rows={4} placeholder={label} value={value} onChange={onChange} required={required} className={`${base} resize-none`} />
+        <textarea rows={4} name={name} placeholder={label} value={value} onChange={onChange} required={required} className={`${base} resize-none`} />
       ) : (
-        <input type={type} placeholder={label} value={value} onChange={onChange} required={required} className={base} />
+        <input type={type} name={name} placeholder={label} value={value} onChange={onChange} required={required} className={base} />
       )}
       <label className={labelClass}>{label}</label>
       <div className="absolute bottom-0 left-0 w-0 h-px bg-[#a8d878] transition-all duration-300 peer-focus:w-full" />
@@ -35,14 +42,23 @@ const FloatingInput = ({ label, type = 'text', value, onChange, required, textar
 };
 
 export default function Contact() {
+  const formRef = useRef(null);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState('idle'); 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
-    setForm({ name: '', email: '', message: '' });
+    setStatus('sending');
+    try {
+      await emailjs.sendForm(EJS_SERVICE, EJS_TEMPLATE, formRef.current, EJS_PUBLIC);
+      setStatus('sent');
+      setForm({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 4000);
+    } catch (err) {
+      console.error("EmailJS Error:", err);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
   };
 
   return (
@@ -97,26 +113,29 @@ export default function Contact() {
 
           {/* Right — form */}
           <motion.div {...fadeUp(0.3)} className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <FloatingInput label="Your Name" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} required />
-                <FloatingInput label="Your Email" type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} required />
+                <FloatingInput label="Your Name" name="from_name" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} required />
+                <FloatingInput label="Your Email" name="from_email" type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} required />
               </div>
-              <FloatingInput label="Your Message" textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} required />
+              <FloatingInput label="Your Message" name="message" textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} required />
 
               <div className="flex items-center justify-between pt-2 border-t border-[#47702220]">
-                <p className="text-xs text-gray-600">I'll reply within 24 hours.</p>
+                <p className="text-xs text-gray-600">
+                  {status === 'error' ? <span className="text-red-400">Something went wrong. Try again.</span> : "I'll reply within 24 hours."}
+                </p>
                 <motion.button
                   type="submit"
+                  disabled={status === 'sending'}
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
-                  className="flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm text-white transition-all duration-300 hover:shadow-[0_0_30px_#47702355]"
-                  style={{ background: sent ? 'linear-gradient(135deg, #2D531A, #477023)' : 'linear-gradient(135deg, #477023, #2D531A)' }}
+                  className="flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm text-white transition-all duration-300 hover:shadow-[0_0_30px_#47702355] disabled:opacity-60 disabled:cursor-not-allowed"
+                  style={{ background: 'linear-gradient(135deg, #477023, #2D531A)' }}
                 >
-                  {sent
-                    ? <><span>✓</span> Sent!</>
-                    : <><FiSend size={15} /> Send Message</>
-                  }
+                  {status === 'sending' && <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Sending...</>}
+                  {status === 'sent'    && <><span>✓</span> Sent!</>}
+                  {status === 'error'   && <><span>✗</span> Failed</>}
+                  {status === 'idle'    && <><FiSend size={15} /> Send Message</>}
                 </motion.button>
               </div>
             </form>
