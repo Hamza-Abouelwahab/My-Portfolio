@@ -6,7 +6,7 @@ import { FiSend, FiArrowUpRight } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
 
 //  EmailJS config
-const EJS_SERVICE  = 'service_h5pfwsg';   
+const EJS_SERVICE  = 'service_2he9z38';   
 const EJS_TEMPLATE = 'template_zu0g7za';  
 const EJS_PUBLIC   = '1jijDXTcveGBivSZU';   
 
