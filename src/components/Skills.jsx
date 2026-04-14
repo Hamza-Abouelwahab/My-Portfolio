@@ -61,27 +61,23 @@ export default function Skills() {
           <div className="accent-line" />
         </motion.div>
 
-        <div className=" flex flex-col  mb-6 gap-6">
+        <div className="flex flex-col gap-6">
           {CARDS.map(({ emoji, title, skills }, i) => (
             <motion.div
               key={title}
               {...fadeUp(0.15 * (i + 1))}
-              className="skill-card  p-7 flex flex-col gap-5"
+              className="skill-card p-5 md:p-7 flex flex-col gap-5"
             >
               <div className="flex items-center gap-3">
-                {/* <span className="text-2xl">{emoji}</span> */}
                 <h3 className="text-xl font-bold text-[#a8d878]">{title}</h3>
               </div>
-
-              {/* <div className="h-px bg-[#703e2320]" /> */}
-
-              <div className="flex flex-wrap gap-8">
+              <div className="flex flex-wrap gap-4 md:gap-8">
                 {skills.map(({ icon, label }) => (
                   <div
                     key={label}
-                    className="skill-pill group flex flex-col items-center gap-4 px-15 py-4 rounded-xl  text-sm text-gray-300 cursor-default hover:text-[#a8d878] "
+                    className="skill-pill group flex flex-col items-center gap-2 md:gap-4 px-3 md:px-6 py-3 md:py-4 rounded-xl text-xs md:text-sm text-gray-300 cursor-default hover:text-[#a8d878]"
                   >
-                    <span className="text-base transition-transform duration-500 group-hover:rotate-360">{icon}</span>
+                    <span className="text-base transition-transform duration-500 group-hover:rotate-12">{icon}</span>
                     {label}
                   </div>
                 ))}

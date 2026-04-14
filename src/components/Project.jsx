@@ -57,7 +57,7 @@ export default function Project() {
         </motion.div>
 
         {/* Project rows */}
-        <div className="flex flex-col gap-25">
+        <div className="flex flex-col gap-12 md:gap-16">
           {PROJECTS.map(({ title, image, description, tags, github, live }, i) => {
             const isEven = i % 2 === 0;
             return (
@@ -66,7 +66,7 @@ export default function Project() {
                 {...fadeUp(0.15 * (i + 1))}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
-                className="group relative grid grid-cols-1 lg:grid-cols-2  border-[#47702220]   transition-all duration-500"
+                className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 border-[#47702220] transition-all duration-500 py-10 lg:py-0"
               >
                 {/* Hover bg sweep */}
                 <div
@@ -76,7 +76,7 @@ export default function Project() {
 
                 {/* ── Image side ── */}
                 <div className={`relative overflow-hidden rounded-2xl ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="relative h-64 md:h-80 overflow-hidden rounded-2xl">
+                  <div className="relative h-52 sm:h-64 md:h-80 overflow-hidden rounded-2xl">
                     <img
                       src={image}
                       alt={title}
@@ -104,11 +104,11 @@ export default function Project() {
                 </div>
 
                 {/* ── Content side ── */}
-                <div className={`flex flex-col justify-center gap-5 px-0 lg:px-12 pt-8 lg:pt-0 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div className={`flex flex-col justify-center gap-4 lg:gap-5 px-0 lg:px-12 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
 
                   {/* Index + title */}
                   <div className="flex items-start gap-4">
-                    <span className="text-5xl font-extrabold leading-none select-none"
+                    <span className="text-4xl md:text-5xl font-extrabold leading-none select-none"
                       style={{ WebkitTextStroke: '1px rgba(71,112,35,0.3)', color: 'transparent' }}>
                       {String(i + 1).padStart(2, '0')}
                     </span>

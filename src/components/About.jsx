@@ -50,13 +50,13 @@ export default function About() {
           <div className="accent-line" />
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
 
-          <motion.div {...fadeUp(0.2)} className="flex-1 flex justify-center">
+          <motion.div {...fadeUp(0.2)} className="w-full flex justify-center lg:flex-1">
             <CodeMockup />
           </motion.div>
 
-          <motion.div {...fadeUp(0.35)} className="flex-1 flex flex-col gap-6">
+          <motion.div {...fadeUp(0.35)} className="w-full lg:flex-1 flex flex-col gap-6">
             <p className="text-gray-400 text-base md:text-lg leading-relaxed">
               I am a motivated and detail-oriented Web Developer with strong experience in{' '}
               <Highlight>JavaScript</Highlight>, <Highlight>React</Highlight>, and <Highlight>Laravel</Highlight>.

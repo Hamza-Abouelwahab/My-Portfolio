@@ -6,7 +6,7 @@ import { FiSend, FiArrowUpRight } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
 
 //  EmailJS config
-const EJS_SERVICE  = 'service_0ls7feq';   
+const EJS_SERVICE  = 'service_h5pfwsg';   
 const EJS_TEMPLATE = 'template_zu0g7za';  
 const EJS_PUBLIC   = '1jijDXTcveGBivSZU';   
 
@@ -70,7 +70,7 @@ export default function Contact() {
         <div className="relative z-10 border-t border-b border-[#47702220] py-20 px-6 md:px-12 text-center overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 100%, rgba(71,112,35,0.12) 0%, transparent 70%)' }} />
           <motion.p {...fadeUp(0)} className="text-[#a8d878] text-sm tracking-widest uppercase mb-4">Get in touch</motion.p>
-          <motion.h2 {...fadeUp(0.1)} className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
+          <motion.h2 {...fadeUp(0.1)} className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
             Let's Build<br />
             <span className="gradient-text">Something Great</span>
           </motion.h2>
@@ -80,7 +80,7 @@ export default function Contact() {
         </div>
 
         {/* ── Main content ── */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-20 grid grid-cols-1 lg:grid-cols-5 gap-16">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-12 py-14 md:py-20 grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
 
           {/* Left — socials */}
           <motion.div {...fadeUp(0.2)} className="lg:col-span-2 flex flex-col justify-between gap-10">
@@ -120,7 +120,7 @@ export default function Contact() {
               </div>
               <FloatingInput label="Your Message" name="message" textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} required />
 
-              <div className="flex items-center justify-between pt-2 border-t border-[#47702220]">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-2 border-t border-[#47702220]">
                 <p className="text-xs text-gray-600">
                   {status === 'error' ? <span className="text-red-400">Something went wrong. Try again.</span> : "I'll reply within 24 hours."}
                 </p>

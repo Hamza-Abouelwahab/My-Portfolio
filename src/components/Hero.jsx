@@ -66,22 +66,22 @@ export default function Hero() {
       {/* Dark overlay so text stays readable */}
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(7,30,7,0.55)' }} />
 
-      <div className="max-w-7xl mx-auto w-full flex flex-col-reverse lg:flex-row items-center gap-16 relative z-10">
+      <div className="max-w-7xl mx-auto w-full flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16 relative z-10">
 
         {/* ── LEFT ── */}
         <div className="flex-1 flex flex-col gap-5">
 
-          <motion.p {...fadeUp(0.2)} className="text-[#a8d878] text-lg font-semibold tracking-wide flex items-center gap-1">
+          <motion.p {...fadeUp(0.2)} className="text-[#a8d878] text-base md:text-lg font-semibold tracking-wide flex items-center gap-1">
             {typed}<span className="inline-block w-0.5 h-5 ml-1 bg-[#a8d878] align-middle animate-caret-blink" />
           </motion.p>
 
-          <motion.h1 {...fadeUp(0.3)} className="text-5xl md:text-7xl font-extrabold leading-tight glow-text">
+          <motion.h1 {...fadeUp(0.3)} className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight glow-text">
             <span className="gradient-text">Hamza</span>
             <br />
             <span className="text-white">Abouelwahab</span>
           </motion.h1>
 
-          <motion.p {...fadeUp(0.4)} className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
+          <motion.p {...fadeUp(0.4)} className="text-gray-400 text-sm md:text-base lg:text-lg leading-relaxed max-w-lg">
             I'm a passionate Web Developer focused on building clean, efficient, and user-friendly web applications.
             I enjoy turning ideas into real digital solutions and continuously improving my technical skills.
           </motion.p>
@@ -119,22 +119,21 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
           className="flex-1 flex justify-center items-center relative"
         >
-          <FloatingBadge icon={<SiReact className="text-[#7ec5f7]" size={16} />} label="React" className="top-4 -left-4 md:top-8 md:-left-8" />
-          <FloatingBadge icon={<SiLaravel className="text-red-400" size={16} />} label="Laravel" className="top-4 -right-4 md:top-8 md:-right-8" />
-          <FloatingBadge icon={<FiFolder className="text-[#477023]" size={16} />} label="3+ Projects" className="-bottom-2 left-1/2 -translate-x-1/2" />
+          <FloatingBadge icon={<SiReact className="text-[#7ec5f7]" size={14} />} label="React" className="top-2 -left-2 md:top-8 md:-left-8" />
+          <FloatingBadge icon={<SiLaravel className="text-red-400" size={14} />} label="Laravel" className="top-2 -right-2 md:top-8 md:-right-8" />
+          <FloatingBadge icon={<FiFolder className="text-[#477023]" size={14} />} label="3+ Projects" className="-bottom-2 left-1/2 -translate-x-1/2" />
 
-          <div className="absolute w-80 h-80 md:w-[420px] md:h-[420px] rounded-full border border-dashed border-[#47702330] animate-spin-slow" />
-          <div className="absolute w-64 h-64 md:w-[340px] md:h-[340px] rounded-full border border-[#2D531A30] animate-spin-reverse" />
-
-          <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full blur-3xl" style={{ background: 'rgba(71,112,35,0.1)' }} />
+          <div className="absolute w-56 h-56 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px] rounded-full border border-dashed border-[#47702330] animate-spin-slow" />
+          <div className="absolute w-44 h-44 sm:w-64 sm:h-64 md:w-[340px] md:h-[340px] rounded-full border border-[#2D531A30] animate-spin-reverse" />
+          <div className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full blur-3xl" style={{ background: 'rgba(71,112,35,0.1)' }} />
 
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             className="relative z-10"
           >
-            <div className="rotating-border p-0.75 rounded-full shadow-[0_0_50px_#47702333]">
-              <div className="w-52 h-52 md:w-72 md:h-72 rounded-full overflow-hidden bg-[#071E07]">
+            <div className="rotating-border p-[3px] rounded-full shadow-[0_0_50px_#47702333]">
+              <div className="w-44 h-44 sm:w-52 sm:h-52 md:w-72 md:h-72 rounded-full overflow-hidden bg-[#071E07]">
                 <img src={profile} alt="Hamza Abouelwahab" className="w-full h-full object-cover" />
               </div>
             </div>
