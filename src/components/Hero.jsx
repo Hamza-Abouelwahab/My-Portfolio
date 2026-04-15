@@ -92,9 +92,10 @@ export default function Hero() {
               style={{ background: 'linear-gradient(135deg, #477023, #2D531A)' }}>
               View My Work
             </a>
-            <a href="#contact" 
+            <a href="Resume.pdf" 
+              download={"Resume-hamza-abl.pdf"}
               className="px-7 py-3 rounded-full font-semibold text-sm text-[#a8d878] btn-outline-glow">
-              Contact Me
+              📄 Resume CV 
             </a>
           </motion.div>
 
