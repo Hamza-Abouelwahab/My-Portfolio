@@ -66,7 +66,7 @@ export default function Project() {
                 {...fadeUp(0.15 * (i + 1))}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
-                className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 border-[#47702220] transition-all duration-500 py-10 lg:py-0"
+                className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8  mx-5 md:mx-7 lg:mx-0 lg:gap-0 border-[#47702220] transition-all duration-500 py-0 "
               >
                 {/* Hover bg sweep */}
                 <div
@@ -107,7 +107,7 @@ export default function Project() {
                 <div className={`flex flex-col justify-center gap-4 lg:gap-5 px-0 lg:px-12 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
 
                   {/* Index + title */}
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start pl-5 lg:pl-0 gap-4">
                     <span className="text-4xl md:text-5xl font-extrabold leading-none select-none"
                       style={{ WebkitTextStroke: '1px rgba(71,112,35,0.3)', color: 'transparent' }}>
                       {String(i + 1).padStart(2, '0')}
@@ -122,10 +122,10 @@ export default function Project() {
                     </div>
                   </div>
 
-                  <p className="text-gray-400 text-sm md:text-base leading-relaxed">{description}</p>
+                  <p className="text-gray-400 text-sm md:text-base  pl-5 lg:pl-0 leading-relaxed">{description}</p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap  pl-5 lg:pl-0 gap-2">
                     {tags.map(tag => (
                       <span key={tag}
                         className="text-xs px-3 py-1.5 rounded-full font-medium text-[#a8d878] border border-[#47702230] transition-all duration-200 group-hover:border-[#47702250]"
@@ -136,7 +136,7 @@ export default function Project() {
                   </div>
 
                   {/* CTA links */}
-                  <div className="flex items-center gap-4 pt-2">
+                  <div className="flex items-center pl-5 lg:pl-0 gap-4 pt-2">
                     <a href={live} target="_blank" rel="noreferrer"
                       className="flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-[#071E07] transition-all duration-300 hover:shadow-[0_0_20px_#47702355] hover:scale-[1.03]"
                       style={{ background: 'linear-gradient(135deg, #a8d878, #477023)' }}>

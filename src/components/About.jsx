@@ -56,7 +56,7 @@ export default function About() {
             <CodeMockup />
           </motion.div>
 
-          <motion.div {...fadeUp(0.35)} className="w-full lg:flex-1 flex flex-col gap-6">
+          <motion.div {...fadeUp(0.35)} className="px-7 md:px-8 lg:px-0 lg:flex-1 flex flex-col gap-6">
             <p className="text-gray-400 text-base md:text-lg leading-relaxed">
               I am a motivated and detail-oriented Web Developer with strong experience in{' '}
               <Highlight>JavaScript</Highlight>, <Highlight>React</Highlight>, and <Highlight>Laravel</Highlight>.
@@ -71,7 +71,7 @@ export default function About() {
               impactful projects.
             </p>
 
-            <div className="flex gap-4 mt-4 flex-wrap">
+            <div className="flex gap-4 mt-4  flex-col md:flex-row">
               <div className="relative group flex-1 min-w-[160px] rounded-2xl p-px overflow-hidden" style={{ background: 'linear-gradient(135deg, #47702240, #2D531A20)' }}>
                 <div className="rounded-2xl px-6 py-5 flex items-center gap-4 h-full transition-all duration-300" style={{ background: 'rgba(7,30,7,0.85)' }}>
                   <div className="p-3 rounded-xl text-[#a8d878] transition-all duration-300 group-hover:scale-110" style={{ background: 'rgba(45,83,26,0.3)' }}>

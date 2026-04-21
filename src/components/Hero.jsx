@@ -71,35 +71,35 @@ export default function Hero() {
         {/* ── LEFT ── */}
         <div className="flex-1 flex flex-col gap-5">
 
-          <motion.p {...fadeUp(0.2)} className="text-[#a8d878] text-base md:text-lg font-semibold tracking-wide flex items-center gap-1">
+          <motion.p {...fadeUp(0.2)} className="text-[#a8d878] text-center md:justify-start justify-center text-base md:text-lg font-semibold tracking-wide flex items-center gap-1">
             {typed}<span className="inline-block w-0.5 h-5 ml-1 bg-[#a8d878] align-middle animate-caret-blink" />
           </motion.p>
 
-          <motion.h1 {...fadeUp(0.3)} className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight glow-text">
+          <motion.h1 {...fadeUp(0.3)} className="text-4xl sm:text-5xl text-center md:text-left md:text-7xl font-extrabold leading-tight glow-text">
             <span className="gradient-text">Hamza</span>
             <br />
             <span className="text-white">Abouelwahab</span>
           </motion.h1>
 
-          <motion.p {...fadeUp(0.4)} className="text-gray-400 text-sm md:text-base lg:text-lg leading-relaxed max-w-lg">
+          <motion.p {...fadeUp(0.4)} className="text-gray-400 text-sm mx-8 md:mx-0 md:text-base lg:text-lg leading-relaxed max-w-lg">
             I'm a passionate Web Developer focused on building clean, efficient, and user-friendly web applications.
             I enjoy turning ideas into real digital solutions and continuously improving my technical skills.
           </motion.p>
 
-          <motion.div {...fadeUp(0.5)} className="flex flex-wrap gap-4 mt-2">
+          <motion.div {...fadeUp(0.5)} className="flex flex-wrap gap-4 justify-center md:justify-start mt-2">
             <a href="#project"
               className="px-7 py-3 rounded-full font-semibold text-sm text-white transition-all duration-300 hover:shadow-[0_0_24px_#47702355]"
               style={{ background: 'linear-gradient(135deg, #477023, #2D531A)' }}>
               View My Work
             </a>
-            <a href="Resume.pdf" 
+            <a href="Resume-Hamza-Abl.pdf" 
               download={"Resume-hamza-abl.pdf"}
               className="px-7 py-3 rounded-full font-semibold text-sm text-[#a8d878] btn-outline-glow">
               📄 Resume CV 
             </a>
           </motion.div>
 
-          <motion.div {...fadeUp(0.6)} className="flex items-center  gap-5 mt-2">
+          <motion.div {...fadeUp(0.6)} className="flex items-center justify-center md:justify-start gap-5 mt-2">
             {[
               { icon: <FaGithub size={20} />, href: 'https://github.com/Hamza-Abouelwahab', label: 'GitHub' },
               { icon: <FaLinkedin size={20} />, href: 'https://www.linkedin.com/in/hamza-abouelwahab-87767a349/', label: 'LinkedIn' },

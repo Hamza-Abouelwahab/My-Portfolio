@@ -120,7 +120,7 @@ export default function Contact() {
               </div>
               <FloatingInput label="Your Message" name="message" textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} required />
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-2 border-t border-[#47702220]">
+              <div className="flex flex-col sm:flex-row items-end sm:items-center justify-between gap-3 pt-2 border-t border-[#47702220]">
                 <p className="text-xs text-gray-600">
                   {status === 'error' ? <span className="text-red-400">Something went wrong. Try again.</span> : "I'll reply within 24 hours."}
                 </p>
@@ -129,7 +129,7 @@ export default function Contact() {
                   disabled={status === 'sending'}
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
-                  className="flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm text-white transition-all duration-300 hover:shadow-[0_0_30px_#47702355] disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="flex items-center  gap-2 px-8 py-3.5 rounded-full font-semibold text-sm text-white transition-all duration-300 hover:shadow-[0_0_30px_#47702355] disabled:opacity-60 disabled:cursor-not-allowed"
                   style={{ background: 'linear-gradient(135deg, #477023, #2D531A)' }}
                 >
                   {status === 'sending' && <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Sending...</>}

@@ -48,7 +48,7 @@ const CARDS = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-pad px-6 md:px-12 relative overflow-hidden">
+    <section id="skills" className="section-pad px-7  md:px-12 relative overflow-hidden">
       <div className="circuit-bg" />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -77,7 +77,7 @@ export default function Skills() {
                     key={label}
                     className="skill-pill group flex flex-col items-center gap-2 md:gap-4 px-3 md:px-6 py-3 md:py-4 rounded-xl text-xs md:text-sm text-gray-300 cursor-default hover:text-[#a8d878]"
                   >
-                    <span className="text-base transition-transform duration-500 group-hover:rotate-12">{icon}</span>
+                    <span className="text-base transition-transform duration-500 group-hover:rotate-360 group-hover:duration-900 ">{icon}</span>
                     {label}
                   </div>
                 ))}
