@@ -64,7 +64,7 @@ export default function Navbar() {
               </a>
             ))}
             <a href="#contact" className="mt-2 text-center px-5 py-2 rounded-full text-sm font-semibold text-[#a8d878] btn-outline-glow">
-              Hire Me
+              Contact Me
             </a>
           </motion.div>
         )}
